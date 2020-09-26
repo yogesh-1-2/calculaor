@@ -1,10 +1,12 @@
-import { render } from '@testing-library/react';
 import React,{Component} from 'react';
 class Button extends Component{
+    constructor(props){
+        super(props);
+    }
     render(){
         return(
-            <div>
-                <button Class="calc_button">click</button>
+            <div className={`column-${this.props.cols}`}>
+                <button className="calc-button" onClick={()=>this.props.action(this.props.symbol)}>{this.props.symbol}</button>
             </div>
         )
     }
